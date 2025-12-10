@@ -1,59 +1,117 @@
-// src/app/page.tsx
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050816] text-slate-100 flex items-center justify-center px-4">
-      <div className="max-w-4xl w-full py-16">
-        {/* Top badge */}
-        <div className="mb-6 inline-flex rounded-full border border-slate-700/80 bg-slate-900/60 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-slate-300/80">
-          MindraTech LLC · Celestia / Cici
+    <div className="flex flex-col items-center px-4 pb-16">
+      {/* Hero */}
+      <section className="relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 py-16 px-6 sm:px-10 lg:px-14">
+        {/* layered background images */}
+        <div className="pointer-events-none absolute inset-0 opacity-60 mix-blend-screen">
+          <Image
+            src="/mindratech-brain-ai.png"
+            alt="Human–AI interface"
+            fill
+            priority
+            className="object-cover object-left"
+          />
+        </div>
+        <div className="pointer-events-none absolute inset-0 opacity-40 mix-blend-screen">
+          <Image
+            src="/mindratech-orbit-core.jpg"
+            alt="Orbital intelligence core"
+            fill
+            className="object-cover object-right"
+          />
         </div>
 
-        {/* Hero copy */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-4">
-          Operational intelligence for founders who refuse chaos.
-        </h1>
+        {/* gradient overlay to tie them together */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950/60 via-slate-950/70 to-slate-950/90" />
 
-        <p className="text-sm sm:text-base md:text-lg text-slate-300/90 max-w-2xl mb-8">
-          MindraTech is building Celestia—an enterprise-grade execution layer that runs on your
-          calendar, your workflows, and your governance. Cici is the front-facing agent that
-          turns founder intent into deterministic action.
+        <div className="relative z-10 max-w-xl space-y-6">
+          <p className="text-xs font-semibold tracking-[0.3em] text-teal-300 uppercase">
+            MindraTech LLC
+          </p>
+          <h1 className="text-3xl font-semibold leading-tight text-slate-50 sm:text-4xl lg:text-5xl">
+            Human grit,{" "}
+            <span className="bg-gradient-to-r from-teal-300 to-violet-400 bg-clip-text text-transparent">
+              machine precision
+            </span>
+            .
+          </h1>
+          <p className="text-sm text-slate-200/80 sm:text-base">
+            We’re building <strong>Celestia</strong> — an operational
+            intelligence layer that runs calendars, workflows, and decisions
+            with discipline. Exciting, but humble: no hype, just execution.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <a
+              href="#celestia"
+              className="rounded-full bg-teal-400/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-950 hover:bg-teal-300"
+            >
+              Explore Celestia
+            </a>
+            <a
+              href="#founders"
+              className="rounded-full border border-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-100 hover:border-teal-300/80 hover:text-teal-200"
+            >
+              Founder’s message
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision */}
+      <section id="vision" className="mt-16 max-w-5xl space-y-4">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
+          Vision
+        </h2>
+        <p className="text-sm text-slate-200">
+          Celestia is not a toy chatbot. It is an execution layer that encodes
+          founder doctrine, runs repeatable workflows, and keeps a clean audit
+          trail. We focus on reliability, clarity, and long-term leverage.
         </p>
+      </section>
 
-        {/* Two-column quick value props */}
-        <div className="grid gap-4 md:grid-cols-2 mb-10">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
-            <h2 className="text-sm font-semibold mb-2 text-slate-100">
-              What&apos;s live today
-            </h2>
-            <ul className="space-y-1 text-xs sm:text-sm text-slate-300/90">
-              <li>· Static frontend deployed on Render</li>
-              <li>· Custom domain via Cloudflare: mindratechllc.org</li>
-              <li>· TenantAlpha & Celestia EA provisioned and logging</li>
-            </ul>
-          </div>
+      {/* Celestia */}
+      <section id="celestia" className="mt-12 max-w-5xl space-y-4">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
+          Celestia / Cici
+        </h2>
+        <p className="text-sm text-slate-200">
+          Cici is the MindraTech executive operations agent. It schedules,
+          drafts, triggers workflows, and logs every action. The goal is simple:
+          give founders a system that never forgets and never hand-waves.
+        </p>
+      </section>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
-            <h2 className="text-sm font-semibold mb-2 text-slate-100">
-              Where we&apos;re taking it
-            </h2>
-            <ul className="space-y-1 text-xs sm:text-sm text-slate-300/90">
-              <li>· Cici: founder-aligned control surface for Celestia</li>
-              <li>· Multi-tenant operational consoles for clients</li>
-              <li>· Deep integration with Lindy, n8n, Render, and Google Workspace</li>
-            </ul>
-          </div>
-        </div>
+      {/* Founders */}
+      <section id="founders" className="mt-12 max-w-5xl space-y-4">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
+          Founder’s message
+        </h2>
+        <p className="text-sm text-slate-200">
+          MindraTech is built on ownership, merit, and radical honesty with
+          respect. The stack, the workflows, and the automation all exist to
+          reflect those principles in real operations.
+        </p>
+      </section>
 
-        {/* Simple CTA row */}
-        <div className="flex flex-wrap gap-3 text-xs sm:text-sm">
-          <span className="inline-flex items-center rounded-full border border-emerald-500/70 bg-emerald-500/10 px-3 py-1 font-medium text-emerald-200">
-            Status: Internal build in progress
-          </span>
-          <span className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-slate-300/90">
-            Cici is being trained on the Founder&apos;s doctrine.
-          </span>
-        </div>
-      </div>
-    </main>
+      {/* Contact */}
+      <section id="contact" className="mt-12 max-w-5xl space-y-4">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
+          Contact
+        </h2>
+        <p className="text-sm text-slate-200">
+          For partnerships, pilots, or serious conversations about operational
+          intelligence, reach out:{" "}
+          <a
+            href="mailto:jhous@mindratechllc.org"
+            className="text-teal-300 underline-offset-2 hover:underline"
+          >
+            jhous@mindratechllc.org
+          </a>
+        </p>
+      </section>
+    </div>
   );
 }

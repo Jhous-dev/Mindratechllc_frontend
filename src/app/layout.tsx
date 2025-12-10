@@ -4,9 +4,9 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "MindraTech LLC | Celestia Operational Intelligence",
+  title: "MindraTech LLC",
   description:
-    "MindraTech LLC builds Celestia: a founder-aligned operational intelligence layer for modern companies.",
+    "MindraTech LLC — Celestia: an enterprise-grade operational intelligence layer for founders.",
 };
 
 export default function RootLayout({
@@ -16,12 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-slate-950 text-slate-50 antialiased">
-        <div className="flex min-h-screen flex-col">
+      <body className="bg-slate-950 text-slate-50 antialiased">
+        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
           <NavBar />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="pt-20">{children}</main>
           <Footer />
         </div>
       </body>
