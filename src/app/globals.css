@@ -7,3 +7,14 @@ html,
 body {
   scroll-behavior: smooth;
 }
+
+/* Optional: subtle gradient background for the whole app */
+body {
+  background: radial-gradient(circle at top, #22c1c3 0, #1d1b2f 45%, #020617 100%);
+}
+
+/* Make text rendering clean */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
